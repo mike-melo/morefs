@@ -1,0 +1,29 @@
+{
+  "name": "morefs",
+  "version": "0.0.1",
+  "description": "A wrapper that adds extra functionality to node's core fs library",
+  "main": "main.js",
+  "scripts": {
+    "test": "make test"
+  },
+   "devDependencies": {
+    "mocha": "~1.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mike-melo/morefs.git"
+  },
+  "keywords": [
+    "fs",
+    "filesystem",
+    "stream",
+    "write",
+    "read",
+    "create",
+    "directory"
+  ],
+  "author": "Michael Melo",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "10c8f8cb0a0d8090348a791d9f62917555d625c3"
+}
