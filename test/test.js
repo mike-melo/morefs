@@ -32,6 +32,43 @@ suite('createWriteStream', function() {
 		done();
 	});
 	
+	test('no directories specified; only file', function(done) {
+		fixture.createWriteStream('file').write('contents');
+		assertFileOnDisk('file');
+		rm('file', function(err) {
+			done();
+		});
+	});
+	
+	test('undefined path', function(done) {
+		try {
+			fixture.createWriteStream(undefined);
+		} catch(err) {
+			assert.equal('path must be a string', err.message);
+		}
+		done();
+	});
+	
+	//Revisit
+//	test('empty path', function(done) {
+//		try {
+//			fixture.createWriteStream('');
+//		} catch(err) {
+//			console.log('error');
+//			assert.equal('path must be a string', err.message);
+//		}
+//		done();
+//	});
+	
+	test('blank path', function(done) {
+		try {
+			fixture.createWriteStream(' ');
+		} catch(err) {
+			assert.equal('path must be a string', err.message);
+		}
+		done();
+	});	
+	
 });
 
 	
