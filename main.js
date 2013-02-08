@@ -1,5 +1,5 @@
 var fs = require('fs');
 
 module.exports.createWriteStream = function(path, options)  {
-	fs.createWriteStream(path, options);
+	return fs.createWriteStream(path, options);
 };
