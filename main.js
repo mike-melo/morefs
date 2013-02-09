@@ -1,14 +1,10 @@
-
 var fs = require('fs'),
-	mkdirP = require('./lib/mkdir-p');
+	mkdirP = require('./lib/mkdir-p'),
+	path = require('path');
 
-module.exports.createWriteStream = function(path, options)  {
-	if(path) {
-		var lastDirIndex = path.lastIndexOf('/');
-		if(lastDirIndex > -1) {
-			var dirsToCreate = path.substring(0, lastDirIndex);
-			mkdirP(dirsToCreate);
-		}
+module.exports.createWriteStream = function(streamToPath, options)  {
+	if(streamToPath) {
+		mkdirP(path.dirname(streamToPath));
 	}
-	return fs.createWriteStream(path, options);
+	return fs.createWriteStream(streamToPath, options);
 };
